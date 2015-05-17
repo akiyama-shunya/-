@@ -21,3 +21,9 @@
 .DS_Store
 .idea
 .secret
+*.rpm
+*.tar
+*.rpm-bundle.tar
+*.x86_64.rpm
+MySQL-5.6.19-1.linux_glibc2.5.x86_64.rpm-bundle.tar
+MySQL-embedded-5.6.19-1.linux_glibc2.5.x86_64.rpm
