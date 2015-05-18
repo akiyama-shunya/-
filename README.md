@@ -1,5 +1,5 @@
 == README
-
+centos7
 
 ruby 2.0.0p645 (2015-04-13 revision 50299) [x86_64-linux]
 
