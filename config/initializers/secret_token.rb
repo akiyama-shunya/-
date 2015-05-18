@@ -9,4 +9,14 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Seleclothes::Application.config.secret_key_base = '8d1428bd5931c9bd2ebd274b927b22186364e803e2e7cd37b188216b0f69f3b8691ab874d90fc6739891b960508f2b8180062283ec85478e5777990cd31e4b0e'
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist?(token_file)
+	FIle.read(token_file).chomp
+	else
+	token = SecureRandom.hex(64)
+	File.write(token_file, token)
+	token
+	end
+end
+Seleclothes::Application.config.secret_key_base = secure_token
