@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+<%= current_user.provider %>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+<%= link_to 'Sign in', user_omniauth_authorize_path(:facebook) %>
+<% end %>
+<h2>一覧</h2>

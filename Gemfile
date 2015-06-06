@@ -8,7 +8,9 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate'
-
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 gem 'rspec-rails', '2.13.1'

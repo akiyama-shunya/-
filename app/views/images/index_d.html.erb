@@ -1,0 +1,5 @@
+<h1>TEST</h1>
+<% @images.each do |img| %>
+<%= image_tag show_image_image_path(img), class: "middle-img" %>
+<% end %>
+<%= link_to 'Sign out', destroy_designer_session_path, method: :delete %>

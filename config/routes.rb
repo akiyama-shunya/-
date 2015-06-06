@@ -1,4 +1,28 @@
 Seleclothes::Application.routes.draw do
+	#認証なし(ログインページ込み)でアクセスここから↓
+	root 'pages#home'
+	devise_for :users, path_names: {sign_in: "sign_in", sign_out: "sign_out"},
+	controllers: {
+	omniauth_callbacks: 'users/omniauth_callbacks'
+	 }
+	 devise_for :designers
+	#match'/', to: 'users#home',				via: 'get'
+	match '/sign_up', to: 'designers/registrations#new',	via: 'get'
+	match'/sign_up', to: 'devise/registrations#new',	via: 'get'
+	match '/help', to: 'pages#help',					via: 'get'
+	match '/about', to: 'pages#about',					via: 'get'
+	#ここまで↑
+	
+	#ログイン後アクセスここから↓
+	get "index", to: "members#index", as: "members_root"
+	match '/index_d', to: 'images#index_d',				via: 'get'
+	resources :images
+	resources :images do
+		member do
+			get 'show_image'
+		end
+	end
+	#match '/images/:id', to: 'images#show',		via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
